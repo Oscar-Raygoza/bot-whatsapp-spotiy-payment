@@ -4,7 +4,7 @@ import qrcode from "qrcode-terminal";
 //import ora from "ora";
 
 import { Client, MessageMedia } from "whatsapp-web.js";
-import { logWarning, logInfo, logSuccess, logError } from "../../Logs";
+import { logWarning, logInfo, logSuccess, logError } from "../utils/logs";
 export class ClientWhatsApp {
   private client: Client;
 
@@ -54,7 +54,7 @@ export class ClientWhatsApp {
 
     this.client.on("message", (msg) => {
       msg.reply(
-        `Hola ${msg.from}, por el momento no puedo contestar a tu mensaje "${msg.body}" pero una ia intentara contestar en otro momento`
+        `Hola ${msg.from}, por el momento no puedo contestar a tu mensaje "${msg.body}"`
       );
     });
 
